@@ -1,0 +1,24 @@
+{
+  "name": "now-playing",
+  "version": "1.0.0",
+  "description": "Microservice for getting currently playing track in Spotify",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akhtarja/www.javed.dev.git"
+  },
+  "author": "Javed Akhtar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akhtarja/www.javed.dev/issues"
+  },
+  "homepage": "https://github.com/akhtarja/www.javed.dev#readme",
+  "dependencies": {
+    "aws-sdk": "^2.424.0",
+    "fs": "0.0.1-security",
+    "request": "^2.88.0"
+  }
+}

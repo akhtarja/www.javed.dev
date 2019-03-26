@@ -1,0 +1,12 @@
+.DS_Store
+
+# Serverless deployment folder
+.serverless
+
+# gulp build folders
+app/build
+app/js/config
+
+# package directories
+node_modules
+jspm_packages

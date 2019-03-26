@@ -1,0 +1,19 @@
+service: www-javed-dev
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-east-1
+  profile: www-javed-dev
+  environment:
+    APP_BUCKET_NAME: www.javed.dev
+
+resources:
+  Resources:
+    AppBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:provider.environment.APP_BUCKET_NAME}
+        AccessControl: PublicRead
+        WebsiteConfiguration:
+          IndexDocument: index.html

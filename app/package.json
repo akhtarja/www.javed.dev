@@ -1,0 +1,44 @@
+{
+  "title": "www.javed.dev",
+  "name": "www.javed.dev",
+  "version": "2.0.0",
+  "description": "Website located at www.javed.dev",
+  "keywords": [
+    "developer"
+  ],
+  "homepage": "https://github.com/akhtarja/www.javed.dev#readme",
+  "bugs": {
+    "url": "https://github.com/akhtarja/www.javed.dev/issues"
+  },
+  "license": "ISC",
+  "author": "Javed Akhtar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akhtarja/www.javed.dev"
+  },
+  "dependencies": {
+    "bootstrap": ">=4.3.1",
+    "font-awesome": "4.7.0",
+    "fs": "0.0.1-security",
+    "jquery": "3.3.1",
+    "jquery.easing": "^1.4.1",
+    "path": "^0.12.7",
+    "simple-line-icons": "2.4.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "4.0.0",
+    "gulp-header": "2.0.7",
+    "gulp-rename": "1.4.0",
+    "gulp-sass": "4.0.2",
+    "gulp-uglify-es": "^1.0.4",
+    "merge-stream": "^1.0.1"
+  },
+  "scripts": {
+    "start": "gulp && gulp dev",
+    "build": "gulp",
+    "deploy": "aws s3 rm s3://www.javed.dev --recursive && aws s3 cp build s3://www.javed.dev --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --recursive --profile www-javed-dev"
+  }
+}
