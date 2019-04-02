@@ -14,8 +14,9 @@ provider:
   region: us-east-1
   profile: www-javed-dev
   environment:
-    API_URL: ${env:WWW_JAVED_DEV_SPOTIFY_NOW_PLAYING_URL}
-    API_KEY: ${env:WWW_JAVED_DEV_SPOTIFY_NOW_PLAYING_KEY}
+    API_URL: ${env:WWW_JAVED_DEV_SPOTIFY_NOW_PLAYING_URL_${self:custom.stage}}
+    API_KEY: ${env:WWW_JAVED_DEV_SPOTIFY_NOW_PLAYING_KEY_${self:custom.stage}}
+    API_WRAPPER_URL: ${env:WWW_JAVED_DEV_NOWPLAYING_API_CUSTOM_URL_${self:custom.stage}}
 
 functions:
   now-playing:

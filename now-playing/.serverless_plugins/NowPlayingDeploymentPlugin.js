@@ -30,14 +30,14 @@ class NowPlayingDeploymentPlugin {
             return reject(err);
           } else {
             const apiGatewayRestApi = response.StackResources.find(resource => resource.LogicalResourceId === "ApiGatewayRestApi").PhysicalResourceId;
-            const apiUrl = `https://${apiGatewayRestApi}.execute-api.${region}.amazonaws.com/${custom.stage}/nowplaying`;
+            const apiUrl = provider.environment.API_WRAPPER_URL ? `${provider.environment.API_WRAPPER_URL}/nowplaying` : `https://${apiGatewayRestApi}.execute-api.${region}.amazonaws.com/${custom.stage}/nowplaying`;
             const fileContents = `const ${service.replace(/-/g, '_')}_apiurl = '${apiUrl}';`;
             const path = custom.config_path;
 
             if (!fs.existsSync(path)) {
               fs.mkdirSync(path);
             }
-
+            console.log(fileContents);
             fs.writeFileSync(`${path}/${service}.js`, fileContents);
             return resolve(response);
           }
