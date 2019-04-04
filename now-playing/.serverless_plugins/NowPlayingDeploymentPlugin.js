@@ -37,7 +37,6 @@ class NowPlayingDeploymentPlugin {
             if (!fs.existsSync(path)) {
               fs.mkdirSync(path);
             }
-            console.log(fileContents);
             fs.writeFileSync(`${path}/${service}.js`, fileContents);
             return resolve(response);
           }
