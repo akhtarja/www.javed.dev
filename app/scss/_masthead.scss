@@ -1,64 +1,55 @@
 // Styling for the masthead
 header.masthead {
-    position: relative;
+  position: relative;
+  width: 100%;
+  padding-top: 150px;
+  padding-bottom: 100px;
+  color: white;
+  background: $theme-secondary;
 
-    width: 100%;
-    padding-top: 150px;
-    padding-bottom: 100px;
+  .hidden {
+    display: none;
+  }
 
-    color: white;
-    background: $theme-secondary;
+  .header-content {
+    max-width: 500px;
+    margin-bottom: 100px;
+    text-align: center;
 
-    a .fontawesome {
-        color: white;
-        margin-top: 1rem;
-        margin-right: 1.5rem;
+    h1 {
+      font-size: 30px;
     }
+  }
 
-    .hidden {
-        display: none;
-    }
+  .device-container {
+    max-width: 325px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  #masthead-loading {
+    font-size: 1000%;
+    text-align: center;
+    color: #333333;
+  }
+
+  @media (min-width: 992px) {
+    height: 100vh;
+    min-height: 775px;
+    padding-top: 0;
+    padding-bottom: 0;
 
     .header-content {
-        max-width: 500px;
-        margin-bottom: 100px;
+      margin-bottom: 0;
+      text-align: left;
 
-        text-align: center;
-        h1 {
-            font-size: 30px;
-        }
+      h1 {
+        font-size: 50px;
+      }
     }
 
     .device-container {
-        max-width: 325px;
-        margin-right: auto;
-        margin-left: auto;
-        .screen img {
-            border-radius: 3px;
-        }
+      max-width: 325px;
     }
-
-    #masthead-loading {
-        font-size: 1000%;
-        text-align: center;
-        color: #333333;
-    }
-
-    @media (min-width: 992px) {
-        height: 100vh;
-        min-height: 775px;
-        padding-top: 0;
-        padding-bottom: 0;
-        .header-content {
-            margin-bottom: 0;
-
-            text-align: left;
-            h1 {
-                font-size: 50px;
-            }
-        }
-        .device-container {
-            max-width: 325px;
-        }
-    }
+  }
 }
