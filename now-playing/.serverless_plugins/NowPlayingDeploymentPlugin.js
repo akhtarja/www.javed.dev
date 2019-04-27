@@ -23,6 +23,7 @@ class NowPlayingDeploymentPlugin {
         const params = {
           StackName: `${service}-${custom.stage}`
         };
+        let apiUrl = '';
 
         cloudFormation.describeStackResources(params, function(err, response) {
           if (err) {
@@ -30,7 +31,11 @@ class NowPlayingDeploymentPlugin {
             return reject(err);
           } else {
             const apiGatewayRestApi = response.StackResources.find(resource => resource.LogicalResourceId === "ApiGatewayRestApi").PhysicalResourceId;
-            const apiUrl = provider.environment.API_WRAPPER_URL ? `${provider.environment.API_WRAPPER_URL}/nowplaying` : `https://${apiGatewayRestApi}.execute-api.${region}.amazonaws.com/${custom.stage}/nowplaying`;
+            if (custom.stage === 'prod' && provider.environment.API_WRAPPER_URL) {
+              apiUrl = `${provider.environment.API_WRAPPER_URL}/nowplaying`;
+            } else {
+              apiUrl = `https://${apiGatewayRestApi}.execute-api.${region}.amazonaws.com/${custom.stage}/nowplaying`;
+            }
             const fileContents = `const ${service.replace(/-/g, '_')}_apiurl = '${apiUrl}';`;
             const path = custom.config_path;
 

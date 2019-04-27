@@ -20,12 +20,12 @@
     "bootstrap": ">=4.3.1",
     "font-awesome": "4.7.0",
     "fs": "0.0.1-security",
-    "jquery": "3.3.1",
+    "jquery": "^3.4.0",
     "jquery.easing": "^1.4.1",
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.5",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-clean-css": "4.0.0",
