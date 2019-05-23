@@ -1,5 +1,7 @@
 # www.javed.dev
 
+[![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=akhtarja/www.javed.dev)](https://dependabot.com)
+
 This repository contains the codebase for https://www.javed.dev.
 
 The Gulp build process places the final assets into the /build folder. The serverless deployment process creates an S3 bucket called `www.javed.dev` to hold the assets. This can be changed by editing the value of `APP_BUCKET_NAME` in `app/serverless.yml`.
