@@ -1,3 +1,5 @@
+org: akhtarja
+app: www-javed-dev
 service: www-javed-dev-now-playing
 
 plugins:
@@ -10,7 +12,7 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   region: us-east-1
   profile: www-javed-dev
   environment:
