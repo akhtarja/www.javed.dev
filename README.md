@@ -13,6 +13,7 @@ The Gulp build process places the final assets into the /build folder. The serve
 ```
 serverless login
 ```
+Note: Serverless Dashboard documentation is available at: https://serverless.com/framework/docs/dashboard/
 
 ## Deploying the Back End
 1. Clone this repo.
