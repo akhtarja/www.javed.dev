@@ -15,10 +15,11 @@ provider:
   runtime: nodejs10.x
   region: us-east-1
   profile: www-javed-dev
+  stage: dev
   environment:
-    API_URL: ${param:WWW_JAVED_DEV_SPOTIFY_NOW_PLAYING_URL_${self:custom.stage}}
-    API_KEY: ${param:WWW_JAVED_DEV_SPOTIFY_NOW_PLAYING_KEY_${self:custom.stage}}
-    API_WRAPPER_URL: ${param:WWW_JAVED_DEV_NOWPLAYING_API_CUSTOM_URL_${self:custom.stage}}
+    API_URL: ${param:WWW_JAVED_DEV_SPOTIFY_NOW_PLAYING_URL_${self:custom.stage}, param:WWW_JAVED_DEV_SPOTIFY_NOW_PLAYING_URL_${self:provider.stage}}
+    API_KEY: ${param:WWW_JAVED_DEV_SPOTIFY_NOW_PLAYING_KEY_${self:custom.stage}, param:WWW_JAVED_DEV_SPOTIFY_NOW_PLAYING_KEY_${self:provider.stage}}
+    API_WRAPPER_URL: ${param:WWW_JAVED_DEV_NOWPLAYING_API_CUSTOM_URL_${self:custom.stage}, param:WWW_JAVED_DEV_NOWPLAYING_API_CUSTOM_URL_${self:provider.stage}}
 
 functions:
   now-playing:
