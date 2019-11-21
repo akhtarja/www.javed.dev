@@ -4,7 +4,7 @@
   "description": "Microservice for getting currently playing track in Spotify",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"No test specified.\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
