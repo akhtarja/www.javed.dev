@@ -19,7 +19,7 @@ The project uses the safeguard policies outlined below. Failure to configure the
 
 |Policy|Safeguard config|Enforcement level|
 |---|---|---|
-|`allowed-stages`|`- dev`<br>`-staging`<br>`- prod`|warning: allow the deploy to continue, but warn the user|
+|`allowed-stages`|`- dev`<br>`- staging`<br>`- prod`|warning: allow the deploy to continue, but warn the user|
 |`framework-version`|`>=1.39.1 <2.0.0`|warning: allow the deploy to continue, but warn the user|
 |`runtimes`|`nodejs10.x`|error: block the deploy from continuing|
 |`no-secret-env-vars`||error: block the deploy from continuing|
