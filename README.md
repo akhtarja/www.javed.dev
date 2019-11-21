@@ -14,6 +14,17 @@ The Gulp build process places the final assets into the /build folder. The serve
 serverless login
 ```
 Note: Serverless Dashboard documentation is available at: https://serverless.com/framework/docs/dashboard/
+### Profile setup
+The project uses the safeguard policies outlined below. Failure to configure these policies will not prevent you from deploying the app's services, but you will receive warnings when deploying to your dev environment. These safeguard can be configured in profiles names for each stage (`dev`, `staging`, `prod`), or under the `default` profile, which will be used as a fallback in case stage-specific profile don't exist.
+
+|Policy|Safeguard config|Enforcement level|
+|---|---|---|
+|`allowed-stages`|`- dev`<br>`-staging`<br>`- prod`|warning: allow the deploy to continue, but warn the user|
+|`framework-version`|`>=1.39.1 <2.0.0`|warning: allow the deploy to continue, but warn the user|
+|`runtimes`|`nodejs10.x`|error: block the deploy from continuing|
+|`no-secret-env-vars`||error: block the deploy from continuing|
+|`allowed-regions`|`- us-east-1`|error: block the deploy from continuing|
+|`no-wild-iam-role-statements`||warning: allow the deploy to continue, but warn the user|
 
 ## Deploying the Back End
 1. Clone this repo.
