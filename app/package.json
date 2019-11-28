@@ -17,7 +17,7 @@
     "url": "https://github.com/akhtarja/www.javed.dev"
   },
   "dependencies": {
-    "bootstrap": ">=4.4.0",
+    "bootstrap": ">=4.4.1",
     "font-awesome": "4.7.0",
     "fs": "0.0.1-security",
     "jquery": "^3.4.1",
