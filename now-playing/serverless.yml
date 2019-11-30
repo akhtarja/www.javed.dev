@@ -15,6 +15,7 @@ provider:
   runtime: nodejs10.x
   region: us-east-1
   profile: www-javed-dev
+  stage: dev
   environment:
     API_URL: ${env:WWW_JAVED_DEV_SPOTIFY_NOW_PLAYING_URL_${self:custom.stage}}
     API_KEY: ${env:WWW_JAVED_DEV_SPOTIFY_NOW_PLAYING_KEY_${self:custom.stage}}
@@ -24,6 +25,7 @@ functions:
   now-playing:
     name: ${self:custom.namespace}
     handler: handler.nowPlaying
+    timeout: 10
     events:
       - http:
           path: nowplaying

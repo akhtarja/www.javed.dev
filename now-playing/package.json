@@ -4,7 +4,7 @@
   "description": "Microservice for getting currently playing track in Spotify",
   "main": "handler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No test specified.\" && exit 0"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/akhtarja/www.javed.dev#readme",
   "dependencies": {
-    "aws-sdk": "^2.575.0",
+    "aws-sdk": "^2.580.0",
     "fs": "0.0.1-security",
     "request": "^2.88.0"
   }
