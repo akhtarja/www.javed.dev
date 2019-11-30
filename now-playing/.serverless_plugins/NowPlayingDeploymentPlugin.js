@@ -1,7 +1,5 @@
 const fs = require('fs');
 const AWS = require('aws-sdk');
-const querystring = require('querystring');
-const uuidv4 = require('uuid/v4');
 
 class NowPlayingDeploymentPlugin {
   constructor(serverless) {

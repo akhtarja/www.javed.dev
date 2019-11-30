@@ -31,7 +31,7 @@ The project uses the safeguard policies outlined below. Failure to configure the
 
 2. Create an AWS IAM user with programmatic access. Add the keys to your local AWS credential files using the name `www-javed-dev`.
 
-3. The application expects the following parameters in the parameters section for the Serverless profile you plan to use:
+3. The application expects the following environment variables:
 
 | Variable name | Description |
 | :--- | :--- |
