@@ -1,6 +1,7 @@
 # www.javed.dev
 
 [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=akhtarja/www.javed.dev)](https://dependabot.com)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=akhtarja_www.javed.dev&metric=alert_status)](https://sonarcloud.io/dashboard?id=akhtarja_www.javed.dev)
 
 This repository contains the codebase for https://www.javed.dev.
 
