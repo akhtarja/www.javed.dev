@@ -19,12 +19,12 @@ const getNowPlaying = () => {
   });
 };
 
-const successResponse = (nowPlaying, callback) => callback(null, {
+const successResponse = (body, callback) => callback(null, {
   statusCode: 200,
   headers: {
     'Access-Control-Allow-Origin': '*'
   },
-  body: nowPlaying
+  body: body
 });
 
 const errorResponse = (error, callback) => {
