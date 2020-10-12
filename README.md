@@ -16,7 +16,7 @@ serverless login
 ```
 Note: Serverless Dashboard documentation is available at: https://serverless.com/framework/docs/dashboard/
 ### Profile setup
-The project uses the safeguard policies outlined below. Failure to configure these policies will not prevent you from deploying the app's services, but you will receive warnings when deploying to your dev environment. These safeguard can be configured in profiles names for each stage (`dev`, `staging`, `prod`), or under the `default` profile, which will be used as a fallback in case stage-specific profile don't exist.
+The project uses the safeguard policies outlined below. Failure to configure these policies will not prevent you from deploying the app's services, but you will receive warnings when deploying to your dev environment. These safeguards can be configured with profile names for each stage (`dev`, `staging`, `prod`), or under the `default` profile, which will be used as a fallback in case stage-specific profiles don't exist.
 
 |Policy|Safeguard config|Enforcement level|
 |---|---|---|
