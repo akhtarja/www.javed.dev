@@ -1,8 +1,7 @@
 {
-  "name": "serverless-spotify-now-playing",
+  "name": "www-javed-dev",
   "version": "1.0.0",
-  "description": "Spotify Now Playing",
-  "main": "handler.js",
+  "description": "www.javed.dev",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/akhtarja/www.javed.dev.git"
@@ -12,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/akhtarja/www.javed.dev/issues"
   },
-  "homepage": "https://github.com/akhtarja/www.javed.dev#readme",
+  "homepage": "https://www.javed.dev",
   "devDependencies": {
     "eslint": "^7.11.0",
     "eslint-config-airbnb-base": "^14.2.0",
