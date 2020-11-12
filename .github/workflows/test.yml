@@ -11,12 +11,14 @@ jobs:
       - uses: actions/setup-node@v1
       - run: npm install -g serverless
       - run: npm install
-      - run: cd now-playing
-      - run: npm install
-      - run: serverless deploy --stage dev
-      - run: cd ../app
-      - run: npm install
-      - run: npm run build
+      - run: |
+          cd now-playing
+          npm install
+          serverless deploy --stage dev
+      - run: |
+          cd app
+          npm install
+          npm run build
   eslint:
     runs-on: ubuntu-latest
     steps:
