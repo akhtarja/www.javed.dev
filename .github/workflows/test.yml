@@ -1,0 +1,27 @@
+name: test
+on:
+  push:
+    branches-ignore:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install
+      - run: |
+          cd now-playing
+          npm install
+      - run: |
+          cd app
+          npm install
+          npm run build
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - run: npm install -g eslint
+      - run: npm install
+      - run: eslint . --max-warnings=0
