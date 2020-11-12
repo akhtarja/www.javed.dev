@@ -1,1 +1,3 @@
-app
+app/build
+app/js/config
+app/js/new-age.js
