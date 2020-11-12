@@ -8,7 +8,10 @@ plugins:
 custom:
   namespace: www-javed-dev-now-playing-${self:custom.stage}
   stage: ${opt:stage, self:provider.stage}
-  config_path: "../app/js/config"
+  config_path: '../app/js/config'
+  environments:
+    dev: DEV
+    prod: PROD
 
 provider:
   name: aws
@@ -17,9 +20,9 @@ provider:
   profile: www-javed-dev
   stage: dev
   environment:
-    API_URL: ${env:WWW_JAVED_DEV_SPOTIFY_NOW_PLAYING_URL_${self:custom.stage}}
-    API_KEY: ${env:WWW_JAVED_DEV_SPOTIFY_NOW_PLAYING_KEY_${self:custom.stage}}
-    API_WRAPPER_URL: ${env:WWW_JAVED_DEV_NOWPLAYING_API_CUSTOM_URL_${self:custom.stage}}
+    API_URL: ${env:WWW_JAVED_DEV_SPOTIFY_NOW_PLAYING_URL}
+    API_KEY: ${env:WWW_JAVED_DEV_SPOTIFY_NOW_PLAYING_KEY}
+    API_WRAPPER_URL: ${env:WWW_JAVED_DEV_NOWPLAYING_API_CUSTOM_URL}
 
 functions:
   now-playing:

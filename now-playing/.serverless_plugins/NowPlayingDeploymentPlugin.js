@@ -14,11 +14,16 @@ class NowPlayingDeploymentPlugin {
       const custom = serverless.service.custom;
       const service = serverless.service.service;
 
-      const credentials = new AWS.SharedIniFileCredentials({
-        profile: provider.profile
-      });
+      if (custom.stage === 'dev') {
+        const credentials = new AWS.SharedIniFileCredentials({
+          profile: provider.profile
+        });
+      }
       const region = provider.region;
-      const cloudFormation = new AWS.CloudFormation({ credentials, region });
+      const cloudFormation =
+        custom.stage === 'dev'
+          ? new AWS.CloudFormation({ credentials, region })
+          : new AWS.CloudFormation({ region });
 
       const params = {
         StackName: `${service}-${custom.stage}`
