@@ -38,6 +38,8 @@
   "scripts": {
     "start": "gulp && gulp dev",
     "build": "gulp",
-    "deploy": "aws s3 rm s3://www.javed.dev --recursive && aws s3 cp build s3://www.javed.dev --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --recursive --profile www-javed-dev"
+    "deploy": "aws s3 rm s3://www.javed.dev --recursive && aws s3 cp build s3://www.javed.dev --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --recursive --profile www-javed-dev",
+    "deploy:ci": "aws s3 rm s3://www.javed.dev --recursive && aws s3 cp build s3://www.javed.dev --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --recursive",
+    "invalidate": "aws cloudfront create-invalidation --distribution-id $WWW_JAVED_DEV_CLOUDFRONT_ID --paths \"/*\""
   }
 }
