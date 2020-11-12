@@ -9,6 +9,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+      - run: npm install -g serverless
+      - run: npm install
+      - run: cd now-playing
+      - run: npm install
+      - run: serverless deploy --stage dev
+      - run: cd ../app
       - run: npm install
       - run: npm run build
   eslint:
