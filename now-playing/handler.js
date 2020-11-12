@@ -1,11 +1,11 @@
 /* eslint no-console: ["error", { allow: ["log", "warn", "error"] }] */
 /* we want to allow console logging in Lambda functions in order to use AWS CloudWatch */
 
-const request = require('request');
+const request = require("request");
 
 const getNowPlaying = () => {
   const params = {
-    url: `${process.env.API_URL}?key=${process.env.API_KEY}`
+    url: `${process.env.API_URL}?key=${process.env.API_KEY}`,
   };
 
   return new Promise((resolve, reject) => {
@@ -19,18 +19,19 @@ const getNowPlaying = () => {
   });
 };
 
-const successResponse = (body, callback) => callback(null, {
-  statusCode: 200,
-  headers: {
-    'Access-Control-Allow-Origin': '*'
-  },
-  body: body
-});
+const successResponse = (body, callback) =>
+  callback(null, {
+    statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+    },
+    body: body,
+  });
 
 const errorResponse = (error, callback) => {
-  console.error('error:', error);
+  console.error("error:", error);
   callback(null, {
-    statusCode: 401
+    statusCode: 401,
   });
 };
 
@@ -44,5 +45,5 @@ const nowPlaying = async (event, context, callback) => {
 };
 
 module.exports = {
-  nowPlaying
+  nowPlaying,
 };

@@ -1,22 +1,22 @@
 "use strict";
 
 // Load plugins
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const cleanCSS = require('gulp-clean-css');
+const gulp = require("gulp");
+const sass = require("gulp-sass");
+const cleanCSS = require("gulp-clean-css");
 const rename = require("gulp-rename");
-const uglify = require('gulp-uglify-es').default;
+const uglify = require("gulp-uglify-es").default;
 const merge = require("merge-stream");
 const del = require("del");
-const browsersync = require('browser-sync').create();
+const browsersync = require("browser-sync").create();
 
 // BrowserSync
 function browserSync(done) {
   browsersync.init({
     server: {
-      baseDir: "./build"
+      baseDir: "./build",
     },
-    port: 3000
+    port: 3000,
   });
   done();
 }
@@ -29,25 +29,26 @@ function clean() {
 // Bring third party dependencies from node_modules into vendor directory
 function modules() {
   // Bootstrap
-  var bootstrap = gulp.src([
-    './node_modules/bootstrap/dist/**/*',
-    '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
-    '!./node_modules/bootstrap/dist/css/bootstrap-reboot*'
-  ])
-  .pipe(gulp.dest('./build/vendor/bootstrap'));
+  var bootstrap = gulp
+    .src([
+      "./node_modules/bootstrap/dist/**/*",
+      "!./node_modules/bootstrap/dist/css/bootstrap-grid*",
+      "!./node_modules/bootstrap/dist/css/bootstrap-reboot*",
+    ])
+    .pipe(gulp.dest("./build/vendor/bootstrap"));
 
   // jQuery
-  var jquery = gulp.src([
-    './node_modules/jquery/dist/*',
-    '!./node_modules/jquery/dist/core.js'
-  ])
-  .pipe(gulp.dest('./build/vendor/jquery'))
+  var jquery = gulp
+    .src([
+      "./node_modules/jquery/dist/*",
+      "!./node_modules/jquery/dist/core.js",
+    ])
+    .pipe(gulp.dest("./build/vendor/jquery"));
 
   // jQuery Easing
-  var jqueryEasing = gulp.src([
-    './node_modules/jquery.easing/*.js'
-  ])
-  .pipe(gulp.dest('./build/vendor/jquery-easing'))
+  var jqueryEasing = gulp
+    .src(["./node_modules/jquery.easing/*.js"])
+    .pipe(gulp.dest("./build/vendor/jquery-easing"));
 
   return merge(bootstrap, jquery, jqueryEasing);
 }
@@ -55,69 +56,69 @@ function modules() {
 // CSS task
 function css() {
   return gulp
-    .src('./scss/**/*.scss')
-      .pipe(sass.sync({
-        outputStyle: 'expanded'
-      }).on('error', sass.logError))
-      .pipe(rename({
-        suffix: ".min"
-      }))
-      .pipe(cleanCSS())
-      .pipe(gulp.dest('./build/css'))
-      .pipe(browsersync.stream());
+    .src("./scss/**/*.scss")
+    .pipe(
+      sass
+        .sync({
+          outputStyle: "expanded",
+        })
+        .on("error", sass.logError)
+    )
+    .pipe(
+      rename({
+        suffix: ".min",
+      })
+    )
+    .pipe(cleanCSS())
+    .pipe(gulp.dest("./build/css"))
+    .pipe(browsersync.stream());
 }
 
 // JS task
 function js() {
   return gulp
-    .src([
-      './js/**/*.js'
-    ])
+    .src(["./js/**/*.js"])
     .pipe(uglify())
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest('./build/js'))
+    .pipe(
+      rename({
+        suffix: ".min",
+      })
+    )
+    .pipe(gulp.dest("./build/js"))
     .pipe(browsersync.stream());
 }
 
 // IMG task
 function img() {
   return gulp
-    .src([
-      './img/**/*'
-    ])
-    .pipe(gulp.dest('./build/img'))
+    .src(["./img/**/*"])
+    .pipe(gulp.dest("./build/img"))
     .pipe(browsersync.stream());
 }
 
 // HTML task
 function html() {
   return gulp
-    .src([
-      './index.html'
-    ])
-    .pipe(gulp.dest('./build'))
+    .src(["./index.html"])
+    .pipe(gulp.dest("./build"))
     .pipe(browsersync.stream());
 }
 
 // favicon task
 function favicon() {
   return gulp
-    .src([
-      './favicon.ico'
-    ])
-    .pipe(gulp.dest('./build'))
+    .src(["./favicon.ico"])
+    .pipe(gulp.dest("./build"))
     .pipe(browsersync.stream());
 }
 
 // watch files
 function watchFiles() {
-  gulp.watch('./scss/**/*', css);
-  gulp.watch('./js/**/*', js);
-  gulp.watch('./*.html', html);
-  gulp.watch('./img/**/*', img);
-  gulp.watch('./favicon.ico', favicon);
+  gulp.watch("./scss/**/*", css);
+  gulp.watch("./js/**/*", js);
+  gulp.watch("./*.html", html);
+  gulp.watch("./img/**/*", img);
+  gulp.watch("./favicon.ico", favicon);
 }
 
 // define complex tasks

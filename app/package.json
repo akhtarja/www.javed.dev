@@ -17,7 +17,7 @@
     "url": "https://github.com/akhtarja/www.javed.dev"
   },
   "dependencies": {
-    "bootstrap": ">=4.5.2",
+    "bootstrap": ">=4.5.3",
     "font-awesome": "4.7.0",
     "fs": "0.0.1-security",
     "jquery": "^3.5.1",
@@ -25,7 +25,7 @@
     "path": "^0.12.7"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.12",
+    "browser-sync": "^2.26.13",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-clean-css": "4.3.0",
