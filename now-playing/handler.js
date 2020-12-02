@@ -24,7 +24,7 @@ const successResponse = (body, callback) =>
   callback(null, {
     statusCode: 200,
     headers: {
-      'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin': 'www.javed.dev'
     },
     body: body
   });
