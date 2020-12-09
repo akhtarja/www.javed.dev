@@ -1,0 +1,30 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+    reviewers:
+      - 'akhtarja'
+    assignees:
+      - 'akhtarja'
+  - package-ecosystem: 'npm'
+    directory: '/app'
+    schedule:
+      interval: 'weekly'
+    reviewers:
+      - 'akhtarja'
+    assignees:
+      - 'akhtarja'
+  - package-ecosystem: 'npm'
+    directory: '/now-playing'
+    schedule:
+      interval: 'weekly'
+    automerged_updates:
+      - match:
+          dependency_type: 'all'
+          update_type: 'all'
+    reviewers:
+      - 'akhtarja'
+    assignees:
+      - 'akhtarja'
