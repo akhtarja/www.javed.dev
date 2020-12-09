@@ -4,16 +4,12 @@ updates:
     directory: '/'
     schedule:
       interval: 'weekly'
-    reviewers:
-      - 'akhtarja'
     assignees:
       - 'akhtarja'
   - package-ecosystem: 'npm'
     directory: '/app'
     schedule:
       interval: 'weekly'
-    reviewers:
-      - 'akhtarja'
     assignees:
       - 'akhtarja'
   - package-ecosystem: 'npm'
