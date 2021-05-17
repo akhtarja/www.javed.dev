@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/akhtarja/www.javed.dev#readme",
   "dependencies": {
-    "aws-sdk": "^2.892.0",
+    "aws-sdk": "^2.908.0",
     "fs": "0.0.1-security",
     "request": "^2.88.2"
   }
