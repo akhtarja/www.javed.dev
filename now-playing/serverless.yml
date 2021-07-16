@@ -15,7 +15,7 @@ custom:
 
 provider:
   name: aws
-  runtime: nodejs10.x
+  runtime: nodejs14.x
   region: us-east-1
   profile: www-javed-dev
   stage: dev
