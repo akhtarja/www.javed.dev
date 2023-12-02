@@ -12,9 +12,3 @@ updates:
       interval: 'weekly'
     assignees:
       - 'akhtarja'
-  - package-ecosystem: 'npm'
-    directory: '/now-playing'
-    schedule:
-      interval: 'weekly'
-    assignees:
-      - 'akhtarja'
