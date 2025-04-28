@@ -17,3 +17,9 @@ npm run start
 This will run the application in a local development server at `localhost:3000`. To create an optimized production build, run `npm run build`. The compiled assets will be created in the `build` folder.
 
 This site uses the Bootstrap New Age theme located at https://github.com/BlackrockDigital/startbootstrap-new-age
+
+## Deploying
+
+Deploy the application with `npm run deploy`. This will deploy the optimized production build to the correct AWS S3 bucket.
+
+The website is served from the Cloudfront distribution. The cache has a TTL, which will expire on its own after enough time. To expedite this, set the `WWW_JAVED_DEV_CLOUDFRONT_ID` environment variable and run `npm run invalidate`.
